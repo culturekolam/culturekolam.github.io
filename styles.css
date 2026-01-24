@@ -269,7 +269,7 @@ body {
     bottom: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(to top, rgba(139, 21, 56, 0.95) 0%, rgba(139, 21, 56, 0.7) 70%, transparent 100%);
+    background: linear-gradient(to top, var(--wine-red) 0%, rgba(139, 21, 56, 0.7) 70%, transparent 100%);
     padding: 2rem 1.5rem 1.5rem;
     color: white;
 }
