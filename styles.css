@@ -193,11 +193,17 @@ footer {
         flex-direction: column;
         gap: 0;
         padding: 1rem 0;
-        display: none;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        visibility: hidden;
+        transition: max-height 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
     }
 
     .nav-links.active {
-        display: flex;
+        max-height: 300px;
+        opacity: 1;
+        visibility: visible;
     }
 
     .nav-links li {
