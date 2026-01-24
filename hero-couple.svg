@@ -1,0 +1,71 @@
+<svg width="1200" height="600" viewBox="0 0 1200 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFF0F5;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFE5EC;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="skin-tone" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#D4A574;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#C19A6B;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="600" fill="url(#bg-gradient)"/>
+  
+  <!-- Decorative kolam patterns -->
+  <circle cx="150" cy="150" r="60" fill="#F5D547" opacity="0.3"/>
+  <circle cx="1050" cy="450" r="80" fill="#F5D547" opacity="0.3"/>
+  <circle cx="950" cy="120" r="40" fill="#FFB6C1" opacity="0.4"/>
+  <circle cx="200" cy="500" r="50" fill="#FFB6C1" opacity="0.4"/>
+  
+  <!-- Left person (woman) -->
+  <g transform="translate(400, 200)">
+    <!-- Body -->
+    <ellipse cx="0" cy="150" rx="80" ry="100" fill="#8B1538"/>
+    <!-- Neck -->
+    <rect x="-20" y="80" width="40" height="40" rx="10" fill="url(#skin-tone)"/>
+    <!-- Head -->
+    <circle cx="0" cy="50" r="50" fill="url(#skin-tone)"/>
+    <!-- Hair -->
+    <path d="M -40 30 Q -50 0, -30 -10 Q 0 -20, 30 -10 Q 50 0, 40 30 Z" fill="#1a1a1a"/>
+    <!-- Eyes -->
+    <circle cx="-15" cy="45" r="4" fill="#1a1a1a"/>
+    <circle cx="15" cy="45" r="4" fill="#1a1a1a"/>
+    <!-- Smile -->
+    <path d="M -15 60 Q 0 70, 15 60" stroke="#8B1538" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <!-- Traditional jewelry -->
+    <circle cx="0" cy="90" r="8" fill="#FFD700" opacity="0.8"/>
+  </g>
+  
+  <!-- Right person (man) -->
+  <g transform="translate(700, 200)">
+    <!-- Body -->
+    <ellipse cx="0" cy="150" rx="90" ry="110" fill="#2C3E50"/>
+    <!-- Neck -->
+    <rect x="-22" y="80" width="44" height="40" rx="10" fill="url(#skin-tone)"/>
+    <!-- Head -->
+    <circle cx="0" cy="50" r="52" fill="url(#skin-tone)"/>
+    <!-- Hair -->
+    <ellipse cx="0" cy="20" rx="55" ry="35" fill="#1a1a1a"/>
+    <!-- Eyes -->
+    <circle cx="-15" cy="45" r="4" fill="#1a1a1a"/>
+    <circle cx="15" cy="45" r="4" fill="#1a1a1a"/>
+    <!-- Smile -->
+    <path d="M -15 62 Q 0 72, 15 62" stroke="#8B1538" stroke-width="2" fill="none" stroke-linecap="round"/>
+  </g>
+  
+  <!-- Heart between them -->
+  <g transform="translate(550, 180)">
+    <path d="M 0,20 C -5,5 -20,-5 -35,0 C -50,5 -50,20 -35,35 L 0,60 L 35,35 C 50,20 50,5 35,0 C 20,-5 5,5 0,20 Z" 
+          fill="#8B1538" opacity="0.8"/>
+    <path d="M 0,20 C -5,5 -20,-5 -35,0 C -50,5 -50,20 -35,35 L 0,60 L 35,35 C 50,20 50,5 35,0 C 20,-5 5,5 0,20 Z" 
+          fill="none" stroke="#FFD700" stroke-width="2" opacity="0.6"/>
+  </g>
+  
+  <!-- Decorative text elements -->
+  <text x="600" y="520" font-family="Arial, sans-serif" font-size="32" font-weight="600" fill="#8B1538" text-anchor="middle" opacity="0.7">
+    Find Your Perfect Match
+  </text>
+</svg>
