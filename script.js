@@ -39,3 +39,58 @@ window.addEventListener('scroll', () => {
         navbar.classList.remove('scrolled');
     }
 });
+
+// Automatic Carousel for Success Stories
+const carouselTrack = document.querySelector('.carousel-track');
+const dots = document.querySelectorAll('.dot');
+const storyCards = document.querySelectorAll('.story-card');
+
+if (carouselTrack && dots.length > 0) {
+    let currentIndex = 0;
+    const totalCards = storyCards.length;
+    
+    // Function to move to a specific slide
+    function moveToSlide(index) {
+        currentIndex = index;
+        const translateX = -currentIndex * 100;
+        carouselTrack.style.transform = `translateX(${translateX}%)`;
+        
+        // Update dots
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === currentIndex);
+        });
+    }
+    
+    // Auto-advance carousel every 4 seconds
+    let autoplayInterval = setInterval(() => {
+        currentIndex = (currentIndex + 1) % totalCards;
+        moveToSlide(currentIndex);
+    }, 4000);
+    
+    // Add click handlers to dots
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            clearInterval(autoplayInterval);
+            moveToSlide(index);
+            // Restart autoplay after manual interaction
+            autoplayInterval = setInterval(() => {
+                currentIndex = (currentIndex + 1) % totalCards;
+                moveToSlide(currentIndex);
+            }, 4000);
+        });
+    });
+    
+    // Pause autoplay on hover
+    if (carouselTrack.parentElement) {
+        carouselTrack.parentElement.addEventListener('mouseenter', () => {
+            clearInterval(autoplayInterval);
+        });
+        
+        carouselTrack.parentElement.addEventListener('mouseleave', () => {
+            autoplayInterval = setInterval(() => {
+                currentIndex = (currentIndex + 1) % totalCards;
+                moveToSlide(currentIndex);
+            }, 4000);
+        });
+    }
+}

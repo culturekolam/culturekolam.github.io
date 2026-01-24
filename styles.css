@@ -236,14 +236,21 @@ body {
     margin-bottom: 3rem;
 }
 
-.stories-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    max-width: 100%;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     gap: 2rem;
-    margin-top: 3rem;
 }
 
 .story-card {
+    flex: 0 0 100%;
+    max-width: 100%;
     position: relative;
     border-radius: 24px;
     overflow: hidden;
@@ -285,6 +292,32 @@ body {
     font-size: 0.9375rem;
     opacity: 0.9;
     font-weight: 600;
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 2rem;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(139, 21, 56, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    background: var(--wine-red);
+    width: 32px;
+    border-radius: 6px;
+}
+
+.dot:hover {
+    background: rgba(139, 21, 56, 0.6);
 }
 
 @keyframes slideInLeft {
@@ -689,9 +722,8 @@ footer p {
         font-size: 1.0625rem;
     }
 
-    .stories-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
+    .carousel-track {
+        gap: 1rem;
     }
 
     .nav-toggle {
