@@ -1,4 +1,4 @@
-<svg width="1200" height="600" viewBox="0 0 1200 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="1200" height="600" viewBox="0 0 1200 600" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Happy couples connecting through Kolam Culture">
   <!-- Background gradient -->
   <defs>
     <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -63,9 +63,4 @@
     <path d="M 0,20 C -5,5 -20,-5 -35,0 C -50,5 -50,20 -35,35 L 0,60 L 35,35 C 50,20 50,5 35,0 C 20,-5 5,5 0,20 Z" 
           fill="none" stroke="#FFD700" stroke-width="2" opacity="0.6"/>
   </g>
-  
-  <!-- Decorative text elements -->
-  <text x="600" y="520" font-family="Arial, sans-serif" font-size="32" font-weight="600" fill="#8B1538" text-anchor="middle" opacity="0.7">
-    Find Your Perfect Match
-  </text>
 </svg>
