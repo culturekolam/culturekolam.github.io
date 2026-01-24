@@ -31,7 +31,6 @@ document.querySelectorAll('.feature').forEach((feature, index) => {
 });
 
 // Navbar scroll effect
-let lastScroll = 0;
 window.addEventListener('scroll', () => {
     const currentScroll = window.pageYOffset;
     if (currentScroll > 50) {
@@ -39,5 +38,4 @@ window.addEventListener('scroll', () => {
     } else {
         navbar.classList.remove('scrolled');
     }
-    lastScroll = currentScroll;
 });
