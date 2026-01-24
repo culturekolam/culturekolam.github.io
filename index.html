@@ -50,6 +50,23 @@
             <div class="cta">
                 <a href="discover.html" class="btn-primary">Get Started</a>
             </div>
+
+            <div class="app-buttons">
+                <a href="https://play.google.com/store/apps/details?id=com.kolam.app" class="app-btn" target="_blank" rel="noopener">
+                    <span class="app-btn-icon">▶</span>
+                    <div class="app-btn-text">
+                        <small>GET IT ON</small>
+                        <span>Google Play</span>
+                    </div>
+                </a>
+                <a href="https://apps.apple.com/app/id" class="app-btn" target="_blank" rel="noopener">
+                    <span class="app-btn-icon"></span>
+                    <div class="app-btn-text">
+                        <small>Download on the</small>
+                        <span>App Store</span>
+                    </div>
+                </a>
+            </div>
         </div>
     </main>
 
@@ -62,17 +79,6 @@
         </div>
     </footer>
 
-    <script>
-        const navToggle = document.querySelector('.nav-toggle');
-        const navLinks = document.querySelector('.nav-links');
-        
-        if (navToggle && navLinks) {
-            navToggle.addEventListener('click', function() {
-                const isExpanded = this.getAttribute('aria-expanded') === 'true';
-                navLinks.classList.toggle('active');
-                this.setAttribute('aria-expanded', !isExpanded);
-            });
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
