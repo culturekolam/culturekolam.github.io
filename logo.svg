@@ -13,8 +13,8 @@
   </g>
   
   <!-- Tamil text "கோலம்" -->
-  <text x="10" y="32" font-family="Arial, sans-serif" font-size="20" font-weight="500" fill="#1d1d1f">கோலம்</text>
+  <text x="10" y="32" font-family="'Noto Sans Tamil', 'Latha', Arial, sans-serif" font-size="20" font-weight="500" fill="#1d1d1f">கோலம்</text>
   
   <!-- English text "Cultures" in stylized script -->
-  <text x="10" y="52" font-family="'Brush Script MT', cursive, serif" font-size="24" font-weight="400" fill="#C84A5A" style="font-style: italic;">Cultures</text>
+  <text x="10" y="52" font-family="cursive, 'Times New Roman', serif" font-size="24" font-weight="400" fill="#C84A5A" style="font-style: italic;">Cultures</text>
 </svg>
