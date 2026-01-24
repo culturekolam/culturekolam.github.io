@@ -48,6 +48,8 @@ const storyCards = document.querySelectorAll('.story-card');
 if (carouselTrack && dots.length > 0) {
     let currentIndex = 0;
     const totalCards = storyCards.length;
+    const AUTOPLAY_INTERVAL = 4000; // 4 seconds
+    let autoplayInterval;
     
     // Function to move to a specific slide
     function moveToSlide(index) {
@@ -61,11 +63,16 @@ if (carouselTrack && dots.length > 0) {
         });
     }
     
-    // Auto-advance carousel every 4 seconds
-    let autoplayInterval = setInterval(() => {
-        currentIndex = (currentIndex + 1) % totalCards;
-        moveToSlide(currentIndex);
-    }, 4000);
+    // Function to start autoplay
+    function startAutoplay() {
+        return setInterval(() => {
+            currentIndex = (currentIndex + 1) % totalCards;
+            moveToSlide(currentIndex);
+        }, AUTOPLAY_INTERVAL);
+    }
+    
+    // Start initial autoplay
+    autoplayInterval = startAutoplay();
     
     // Add click handlers to dots
     dots.forEach((dot, index) => {
@@ -73,10 +80,7 @@ if (carouselTrack && dots.length > 0) {
             clearInterval(autoplayInterval);
             moveToSlide(index);
             // Restart autoplay after manual interaction
-            autoplayInterval = setInterval(() => {
-                currentIndex = (currentIndex + 1) % totalCards;
-                moveToSlide(currentIndex);
-            }, 4000);
+            autoplayInterval = startAutoplay();
         });
     });
     
@@ -87,10 +91,7 @@ if (carouselTrack && dots.length > 0) {
         });
         
         carouselTrack.parentElement.addEventListener('mouseleave', () => {
-            autoplayInterval = setInterval(() => {
-                currentIndex = (currentIndex + 1) % totalCards;
-                moveToSlide(currentIndex);
-            }, 4000);
+            autoplayInterval = startAutoplay();
         });
     }
 }
