@@ -63,12 +63,16 @@
     </footer>
 
     <script>
-        document.querySelector('.nav-toggle').addEventListener('click', function() {
-            const navLinks = document.querySelector('.nav-links');
-            const isExpanded = this.getAttribute('aria-expanded') === 'true';
-            navLinks.classList.toggle('active');
-            this.setAttribute('aria-expanded', !isExpanded);
-        });
+        const navToggle = document.querySelector('.nav-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        
+        if (navToggle && navLinks) {
+            navToggle.addEventListener('click', function() {
+                const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                navLinks.classList.toggle('active');
+                this.setAttribute('aria-expanded', !isExpanded);
+            });
+        }
     </script>
 </body>
 </html>
