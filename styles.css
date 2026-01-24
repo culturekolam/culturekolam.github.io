@@ -206,6 +206,85 @@ body {
     height: auto;
     border-radius: 24px;
     box-shadow: 0 20px 60px rgba(139, 21, 56, 0.15);
+    object-fit: cover;
+    max-height: 500px;
+}
+
+/* Success Stories Section */
+.success-stories {
+    background: var(--background);
+    padding: 5rem 2rem;
+}
+
+.success-stories-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.success-stories h2 {
+    font-size: 2.75rem;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.section-subtitle {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    margin-bottom: 3rem;
+}
+
+.stories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.story-card {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    aspect-ratio: 1;
+}
+
+.story-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 60px rgba(139, 21, 56, 0.2);
+}
+
+.story-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.story-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(139, 21, 56, 0.95) 0%, rgba(139, 21, 56, 0.7) 70%, transparent 100%);
+    padding: 2rem 1.5rem 1.5rem;
+    color: white;
+}
+
+.story-quote {
+    font-size: 1.125rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    font-style: italic;
+}
+
+.story-names {
+    font-size: 0.9375rem;
+    opacity: 0.9;
+    font-weight: 600;
 }
 
 @keyframes slideInLeft {
@@ -596,6 +675,23 @@ footer p {
 
     .hero-image {
         order: -1;
+    }
+
+    .success-stories {
+        padding: 3rem 1.5rem;
+    }
+
+    .success-stories h2 {
+        font-size: 2rem;
+    }
+
+    .section-subtitle {
+        font-size: 1.0625rem;
+    }
+
+    .stories-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
 
     .nav-toggle {
