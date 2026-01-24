@@ -52,6 +52,13 @@ body {
     font-size: 1.25rem;
     font-weight: 600;
     letter-spacing: -0.01em;
+    display: flex;
+    align-items: center;
+}
+
+.nav-brand .logo {
+    height: 32px;
+    width: auto;
 }
 
 .nav-brand a {
@@ -109,6 +116,14 @@ body {
     opacity: 0;
     transform: translateY(30px);
     animation: fadeInUp 1s ease forwards;
+}
+
+.hero-logo {
+    width: 180px;
+    height: auto;
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease 0.2s forwards;
 }
 
 @keyframes fadeInUp {
