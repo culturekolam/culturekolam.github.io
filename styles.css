@@ -39,6 +39,11 @@ body {
     cursor: pointer;
 }
 
+.nav-toggle:focus {
+    outline: 2px solid white;
+    outline-offset: 2px;
+}
+
 .nav-links {
     display: flex;
     list-style: none;

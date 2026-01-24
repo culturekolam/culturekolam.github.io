@@ -9,7 +9,7 @@
 <body>
     <nav class="navbar">
         <div class="nav-brand">Kolam Culture</div>
-        <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
         <ul class="nav-links">
             <li><a href="discover.html">Discover</a></li>
             <li><a href="matches.html">Matches</a></li>
@@ -64,7 +64,10 @@
 
     <script>
         document.querySelector('.nav-toggle').addEventListener('click', function() {
-            document.querySelector('.nav-links').classList.toggle('active');
+            const navLinks = document.querySelector('.nav-links');
+            const isExpanded = this.getAttribute('aria-expanded') === 'true';
+            navLinks.classList.toggle('active');
+            this.setAttribute('aria-expanded', !isExpanded);
         });
     </script>
 </body>
