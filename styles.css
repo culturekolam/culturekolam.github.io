@@ -126,6 +126,17 @@ body {
     animation: fadeInUp 0.8s ease 0.2s forwards;
 }
 
+@media (prefers-reduced-motion: reduce) {
+    .hero-content,
+    .hero-logo,
+    .feature {
+        animation: none;
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+
 @keyframes fadeInUp {
     to {
         opacity: 1;
