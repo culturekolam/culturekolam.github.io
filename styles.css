@@ -240,6 +240,15 @@ body {
     position: relative;
     overflow: hidden;
     max-width: 100%;
+    cursor: grab;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.carousel-container:active {
+    cursor: grabbing;
 }
 
 .carousel-track {
@@ -723,7 +732,7 @@ footer p {
     }
 
     .carousel-track {
-        gap: 1rem;
+        gap: 0;
     }
 
     .nav-toggle {

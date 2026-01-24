@@ -94,4 +94,92 @@ if (carouselTrack && dots.length > 0) {
             autoplayInterval = startAutoplay();
         });
     }
+    
+    // Touch/Swipe support for manual sliding
+    let touchStartX = 0;
+    let touchEndX = 0;
+    let isDragging = false;
+    let startTranslateX = 0;
+    
+    const carouselContainer = carouselTrack.parentElement;
+    
+    function handleTouchStart(e) {
+        touchStartX = e.type.includes('mouse') ? e.pageX : e.touches[0].clientX;
+        isDragging = true;
+        startTranslateX = -currentIndex * 100;
+        carouselTrack.style.transition = 'none';
+        clearInterval(autoplayInterval);
+    }
+    
+    function handleTouchMove(e) {
+        if (!isDragging) return;
+        
+        // Prevent default scrolling behavior during swipe
+        if (e.cancelable) {
+            e.preventDefault();
+        }
+        
+        const currentX = e.type.includes('mouse') ? e.pageX : e.touches[0].clientX;
+        const diff = currentX - touchStartX;
+        const containerWidth = carouselContainer.offsetWidth;
+        const translatePercentage = (diff / containerWidth) * 100;
+        
+        carouselTrack.style.transform = `translateX(${startTranslateX + translatePercentage}%)`;
+    }
+    
+    function handleTouchEnd(e) {
+        if (!isDragging) return;
+        isDragging = false;
+        
+        touchEndX = e.type.includes('mouse') ? e.pageX : e.changedTouches[0].clientX;
+        const swipeDistance = touchEndX - touchStartX;
+        const swipeThreshold = 50; // Minimum swipe distance in pixels
+        
+        carouselTrack.style.transition = 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
+        
+        if (Math.abs(swipeDistance) > swipeThreshold) {
+            if (swipeDistance > 0 && currentIndex > 0) {
+                // Swipe right - previous slide
+                moveToSlide(currentIndex - 1);
+            } else if (swipeDistance < 0 && currentIndex < totalCards - 1) {
+                // Swipe left - next slide
+                moveToSlide(currentIndex + 1);
+            } else {
+                // Snap back to current slide
+                moveToSlide(currentIndex);
+            }
+        } else {
+            // Snap back if swipe distance is too small
+            moveToSlide(currentIndex);
+        }
+        
+        // Restart autoplay after manual interaction
+        autoplayInterval = startAutoplay();
+    }
+    
+    function handleMouseMove(e) {
+        handleTouchMove(e);
+    }
+    
+    function handleMouseUp(e) {
+        if (isDragging) {
+            handleTouchEnd(e);
+            document.removeEventListener('mousemove', handleMouseMove);
+            document.removeEventListener('mouseup', handleMouseUp);
+        }
+    }
+    
+    function handleMouseDown(e) {
+        handleTouchStart(e);
+        document.addEventListener('mousemove', handleMouseMove);
+        document.addEventListener('mouseup', handleMouseUp);
+    }
+    
+    // Add touch event listeners (not passive for touchmove to allow preventDefault)
+    carouselContainer.addEventListener('touchstart', handleTouchStart, { passive: true });
+    carouselContainer.addEventListener('touchmove', handleTouchMove, { passive: false });
+    carouselContainer.addEventListener('touchend', handleTouchEnd, { passive: true });
+    
+    // Add mouse drag support for desktop
+    carouselContainer.addEventListener('mousedown', handleMouseDown);
 }
