@@ -165,10 +165,21 @@ body {
     font-size: 1.25rem;
     font-weight: 400;
     color: var(--text-secondary);
-    margin-bottom: 3rem;
+    margin-bottom: 1.5rem;
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.description {
+    font-size: 1.0625rem;
+    font-weight: 400;
+    color: var(--text-secondary);
+    margin-bottom: 3rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
 }
 
 /* Features */
@@ -221,6 +232,59 @@ body {
 /* CTA */
 .cta {
     margin-top: 3rem;
+}
+
+/* How It Works Section */
+.how-it-works {
+    margin: 4rem 0 3rem;
+    text-align: center;
+}
+
+.how-it-works h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    color: var(--text-primary);
+    margin-bottom: 3rem;
+}
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.step {
+    text-align: center;
+}
+
+.step-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background: var(--wine-red);
+    color: white;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.step h4 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.75rem;
+}
+
+.step p {
+    font-size: 0.9375rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
 }
 
 .btn-primary {
@@ -404,6 +468,19 @@ footer p {
 
     .tagline {
         font-size: 1.0625rem;
+    }
+
+    .description {
+        font-size: 1rem;
+    }
+
+    .how-it-works h2 {
+        font-size: 2rem;
+    }
+
+    .steps {
+        grid-template-columns: 1fr;
+        gap: 2rem;
     }
 
     .features {
